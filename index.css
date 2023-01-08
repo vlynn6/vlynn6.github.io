@@ -1,93 +1,86 @@
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+/* Navigation Formatting */
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 200px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 1px;
+}
+/*Header*/
+.sidenav h1 {
+  padding: 3px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  text-align: center; 
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  text-align: center; 
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 10px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Responsive Image Grid*/
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0px 0px 15px 200px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
   }
-  
-  nav {
-    position: relative;
-    display: block;
-    background-color: #f6f9ff;
-    padding: 10px;
-    border-radius: 40px;
-    transform: scale(1.8);
-    overflow: hidden;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
   }
-  
-  nav a {
-    position: relative;
-    text-decoration: none;
-    color: #53588b;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
-    line-height: 1;
-    text-align: center;
-    display: inline-block;
-    width: 100px;
-    padding: 10px;
-    box-sizing: border-box;
-    z-index: 2;
-  }
-  
-  nav a b {
-    position: relative;
-    top: 40px;
-    transition: 0.3s ease top;
-  }
-  
-  nav a i {
-    position: relative;
-    left: 25%;
-    transition: 0.3s ease left;
-  }
-  
-  nav span {
-    position: absolute;
-    width: 100px;
-    background-color: #e5eeff;
-    top: 10px;
-    bottom: 10px;
-    left: 10px;
-    border-radius: 50px;
-    z-index: 1;
-    transition: 0.3s ease left;
-  }
-  
-  nav a:hover b {
-    top: 0;
-  }
-  
-  nav a:hover i {
-    left: 0;
-  }
-  
-  nav a:nth-child(1):hover ~ span {
-    left: 10px;
-  }
-  
-  nav a:nth-child(2):hover ~ span {
-    left: 114px;
-  }
-  
-  nav a:nth-child(3):hover ~ span {
-    left: 218px;
-  }
-  
-  #ytd-url {
-    display: block;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    padding: 10px 14px;
-    margin: 20px;
-    color: #fff;
-    font-family: Arial;
-    font-size: 14px;
-    text-decoration: none;
-    background-color: #53588b;
-    border-radius: 4px;
-    box-shadow: 0 10px 20px -5px rgba(83, 88, 139, 0.3);
-    z-index: 125;
-  }
+}
